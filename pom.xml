@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
     <name>aster-yuno-index</name>
     <description>base index</description>
-    <url>https://github.com/AsterCass/sql-garble-spring-boot</url>
+    <url>https://github.com/AsterCass/index</url>
 
     <licenses>
         <license>
@@ -20,10 +20,10 @@
     </licenses>
 
     <scm>
-        <connection>scm:https://github.com/AsterCass/sql-garble-spring-boot.git</connection>
-        <developerConnection>scm:https://github.com/AsterCass/sql-garble-spring-boot.git
+        <connection>scm:https://github.com/AsterCass/index.git</connection>
+        <developerConnection>scm:https://github.com/AsterCass/index.git
         </developerConnection>
-        <url>https://github.com/AsterCass/sql-garble-spring-boot</url>
+        <url>https://github.com/AsterCass/index</url>
     </scm>
 
     <developers>
