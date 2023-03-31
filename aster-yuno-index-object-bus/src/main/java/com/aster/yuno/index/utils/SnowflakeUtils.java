@@ -2,8 +2,10 @@ package com.aster.yuno.index.utils;
 
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;
+import com.aster.yuno.index.config.SnowflakeConfig;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 
@@ -11,13 +13,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class SnowflakeUtils {
 
+    @Resource
+    private SnowflakeConfig snowflakeConfig;
+
     private static Snowflake SNOWFLAKE;
 
-    public SnowflakeUtils(@Value("${cask.snow.workId:1}") Long workerId,
-                          @Value("${cask.snow.dataId:1}") Long datacenterId) {
-        log.info("[op:SnowflakeUtils] init workId = {}, dataId = {}", workerId, datacenterId);
-        SNOWFLAKE = IdUtil.getSnowflake(workerId, datacenterId);
+    @PostConstruct
+    public void postConstruct() {
+        log.info("[op:SnowflakeUtils] init workId = {}, dataId = {}",
+                snowflakeConfig.getWorkId(), snowflakeConfig.getDataId());
+        SNOWFLAKE = IdUtil.getSnowflake(snowflakeConfig.getWorkId(), snowflakeConfig.getDataId());
     }
+
 
     @Deprecated
     public static Long getId() {
