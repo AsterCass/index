@@ -43,3 +43,4 @@ aster-yuno-index-simple
 * mybatis-spring-boot-starter
 * mapper
 * springdoc-openapi-starter-webmvc-ui
+* spring-boot-configuration-processor
