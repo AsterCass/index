@@ -6,7 +6,7 @@
 
     <groupId>com.astercasc</groupId>
     <artifactId>index</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>pom</packaging>
     <name>aster-yuno-index</name>
     <description>base index</description>
@@ -41,7 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <aster.yuno.index.version>1.0.1</aster.yuno.index.version>
+        <aster.yuno.index.version>1.0.2</aster.yuno.index.version>
         <spring-boot.version>3.0.5</spring-boot.version>
         <spring-cloud.version>4.0.2</spring-cloud.version>
     </properties>
