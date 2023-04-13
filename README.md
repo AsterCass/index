@@ -25,6 +25,7 @@ aster-yuno-index-gateway:
 * spring-cloud-starter-gateway
 * spring-cloud-starter-openfeign
 * spring-cloud-starter-consul-config
+* spring-boot-starter-data-redis-reactive
 
 aster-yuno-index-web:
 * \# aster-yuno-index-object
