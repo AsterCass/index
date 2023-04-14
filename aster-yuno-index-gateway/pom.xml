@@ -6,13 +6,13 @@
     <parent>
         <groupId>com.astercasc</groupId>
         <artifactId>index</artifactId>
-        <version>1.0.3</version>
+        <version>1.0.4</version>
     </parent>
 
 
     <artifactId>aster-yuno-index-gateway</artifactId>
     <name>aster-yuno-index-gateway</name>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
 
 
     <dependencies>
@@ -41,6 +41,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis-reactive</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-circuitbreaker-reactor-resilience4j</artifactId>
         </dependency>
 
 
