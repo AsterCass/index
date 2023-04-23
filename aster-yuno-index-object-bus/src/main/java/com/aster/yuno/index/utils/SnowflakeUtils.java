@@ -21,6 +21,8 @@ public class SnowflakeUtils {
 
     public static Snowflake SNOWFLAKE_GEN;
 
+    private static final Integer MAX_LEN = 20;
+
 
     @Bean
     public void initSnowflake() {
@@ -45,9 +47,8 @@ public class SnowflakeUtils {
         return SNOWFLAKE_GEN.nextIdStr();
     }
 
-    public static String getArticleStr() {
-        return ("AT" + SNOWFLAKE_GEN.nextIdStr()).substring(0, 18);
+    public static String getIdStr(String prefix) {
+        return (prefix + SNOWFLAKE_GEN.nextIdStr()).substring(0, MAX_LEN - prefix.length());
     }
-
 
 }
