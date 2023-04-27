@@ -42,7 +42,7 @@ public class SnowflakeUtils {
         return SNOWFLAKE_GEN.nextId();
     }
 
-    @Deprecated
+
     public static String getIdStr() {
         return SNOWFLAKE_GEN.nextIdStr();
     }
