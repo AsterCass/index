@@ -37,6 +37,7 @@ aster-yuno-index-web:
 aster-yuno-index-object-bus:
 * \# aster-yuno-index-web
 * hutool-all
+* ip2region
 
 aster-yuno-index-simple
 * \# aster-yuno-index-object-bus

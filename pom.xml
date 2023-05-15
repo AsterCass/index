@@ -6,7 +6,7 @@
 
     <groupId>com.astercasc</groupId>
     <artifactId>index</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.8</version>
     <packaging>pom</packaging>
     <name>aster-yuno-index</name>
     <description>base index</description>
@@ -41,7 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <aster.yuno.index.version>1.0.6</aster.yuno.index.version>
+        <aster.yuno.index.version>1.0.8</aster.yuno.index.version>
         <spring-boot.version>3.0.5</spring-boot.version>
         <spring-cloud.version>4.0.2</spring-cloud.version>
     </properties>
@@ -182,6 +182,12 @@
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
                 <version>2.0.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.lionsoul</groupId>
+                <artifactId>ip2region</artifactId>
+                <version>2.7.0</version>
             </dependency>
 
 
