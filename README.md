@@ -1,5 +1,13 @@
 # construct
 
+```xml
+        <dependency>
+            <artifactId>aster-yuno-index-simple</artifactId>
+            <name>aster-yuno-index-simple</name>
+            <version>1.0.8</version>
+        </dependency>
+```
+
 ## base
 
 index:
