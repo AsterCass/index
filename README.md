@@ -4,7 +4,7 @@
         <dependency>
             <artifactId>aster-yuno-index-simple</artifactId>
             <name>aster-yuno-index-simple</name>
-            <version>1.0.8</version>
+            <version>1.0.9</version>
         </dependency>
 ```
 
@@ -21,6 +21,7 @@ index:
 
 aster-yuno-index-core:
 * spring-boot-starter
+* spring-cloud-starter-consul-config
 * spring-cloud-starter-consul-discovery
 * lombok
 
@@ -32,7 +33,6 @@ aster-yuno-index-gateway:
 * \# aster-yuno-index-object
 * spring-cloud-starter-gateway
 * spring-cloud-starter-openfeign
-* spring-cloud-starter-consul-config
 * spring-boot-starter-data-redis-reactive
 * spring-cloud-starter-circuitbreaker-reactor-resilience4j
 
@@ -40,7 +40,6 @@ aster-yuno-index-web:
 * \# aster-yuno-index-object
 * spring-boot-starter-web
 * spring-cloud-starter-openfeign
-* spring-cloud-starter-consul-config
 
 aster-yuno-index-object-bus:
 * \# aster-yuno-index-web

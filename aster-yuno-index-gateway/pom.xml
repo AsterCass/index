@@ -6,13 +6,13 @@
     <parent>
         <groupId>com.astercasc</groupId>
         <artifactId>index</artifactId>
-        <version>1.0.8</version>
+        <version>1.0.9</version>
     </parent>
 
 
     <artifactId>aster-yuno-index-gateway</artifactId>
     <name>aster-yuno-index-gateway</name>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
 
 
     <dependencies>
@@ -31,11 +31,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-consul-config</artifactId>
         </dependency>
 
         <dependency>
