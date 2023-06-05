@@ -52,13 +52,35 @@ public class IpSearchUtils {
                 return ipAddressObj.getCountry();
             }
         } catch (Exception ex) {
-            log.error("[op:IpSearchUtils:init] ip [{}] convert fail", ip);
+            log.error("[op:IpSearchUtils:getIpName] ip [{}] convert fail", ip);
             ex.printStackTrace();
             if (null != searcher) {
                 try {
                     searcher.close();
                 } catch (IOException exception) {
-                    log.error("[op:IpSearchUtils:init] ip package builder close fail");
+                    log.error("[op:IpSearchUtils:getIpName] ip package builder close fail");
+                    exception.printStackTrace();
+                }
+            }
+        }
+        return null;
+    }
+
+    public static String getIpAllName(String ip) {
+        Searcher searcher = null;
+        try {
+            searcher = Searcher.newWithVectorIndex(REGION_PATH, REGION_INDEX);
+            String region = searcher.search(ip);
+            searcher.close();
+            return region;
+        } catch (Exception ex) {
+            log.error("[op:IpSearchUtils:getIpAllName] ip [{}] convert fail", ip);
+            ex.printStackTrace();
+            if (null != searcher) {
+                try {
+                    searcher.close();
+                } catch (IOException exception) {
+                    log.error("[op:IpSearchUtils:getIpAllName] ip package builder close fail");
                     exception.printStackTrace();
                 }
             }
