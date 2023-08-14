@@ -48,7 +48,7 @@ public class SnowflakeUtils {
     }
 
     public static String getIdStr(String prefix) {
-        return (prefix + SNOWFLAKE_GEN.nextIdStr()).substring(0, MAX_LEN - prefix.length());
+        return prefix + SNOWFLAKE_GEN.nextIdStr().substring(0, MAX_LEN - prefix.length());
     }
 
 }
