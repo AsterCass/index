@@ -4,9 +4,11 @@ package com.aster.yuno.index.bo;
 import com.aster.yuno.index.enums.WebResultStatusEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class ResultObj<T> {
 
     private Integer status;
