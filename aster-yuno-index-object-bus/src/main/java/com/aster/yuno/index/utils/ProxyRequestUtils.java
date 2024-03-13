@@ -45,43 +45,44 @@ public class ProxyRequestUtils {
     }
 
     public static <T> T sendGetRequest(String url, Class<T> clazz) {
-        return sendRequest(url, null, null, RequestMethod.GET, null, clazz);
+        return sendRequest(url, null, null, RequestMethod.GET, null, clazz, null);
     }
 
     public static <T> T sendGetRequest(String url,
                                        Map<String, String> queryParam, Class<T> clazz) {
-        return sendRequest(url, queryParam, null, RequestMethod.GET, null, clazz);
+        return sendRequest(url, queryParam, null, RequestMethod.GET, null, clazz, null);
     }
 
     public static <T> T sendGetRequest(String url,
                                        Map<String, String> queryParam,
                                        Map<String, String> header, Class<T> clazz) {
-        return sendRequest(url, queryParam, header, RequestMethod.GET, null, clazz);
+        return sendRequest(url, queryParam, header, RequestMethod.GET, null, clazz, null);
     }
 
     public static <T> T sendPostRequest(String url,
                                         Map<String, String> queryParam,
                                         Map<String, String> header, Class<T> clazz) {
-        return sendRequest(url, queryParam, header, RequestMethod.POST, null, clazz);
+        return sendRequest(url, queryParam, header, RequestMethod.POST, null, clazz, null);
     }
 
 
     public static <T> T sendPostRequest(String url, Object bodyObj, Class<T> clazz) {
-        return sendRequest(url, null, null, RequestMethod.POST, bodyObj, clazz);
+        return sendRequest(url, null, null, RequestMethod.POST, bodyObj, clazz, null);
     }
 
     public static <T> T sendPostRequest(String url,
                                         Map<String, String> queryParam,
                                         Map<String, String> header,
                                         Object bodyObj, Class<T> clazz) {
-        return sendRequest(url, queryParam, header, RequestMethod.POST, bodyObj, clazz);
+        return sendRequest(url, queryParam, header, RequestMethod.POST, bodyObj, clazz, null);
     }
 
     public static <T> T sendRequest(String url,
                                     Map<String, String> queryParam,
                                     Map<String, String> header,
                                     RequestMethod method, Object bodyObj,
-                                    Class<T> clazz) {
+                                    Class<T> clazz,
+                                    String customProxyUrl) {
         if (RequestMethod.GET != method && RequestMethod.POST != method) {
             throw new CaskRuntimeException("Request method not support");
         }
@@ -91,7 +92,11 @@ public class ProxyRequestUtils {
         if (ObjectUtils.isEmpty(proxyUrl) || ObjectUtils.isEmpty(url)) {
             throw new CaskRuntimeException("Send proxy request url not allow empty");
         } else {
-            requestBuilder.uri(URI.create(proxyUrl));
+            if (ObjectUtils.isEmpty(customProxyUrl)) {
+                requestBuilder.uri(URI.create(proxyUrl));
+            } else {
+                requestBuilder.uri(URI.create(customProxyUrl));
+            }
         }
         //header
         requestBuilder.setHeader("Content-Type", MediaType.APPLICATION_JSON_VALUE);
