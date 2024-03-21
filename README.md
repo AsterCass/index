@@ -4,7 +4,7 @@
         <dependency>
             <artifactId>aster-yuno-index-simple</artifactId>
             <name>aster-yuno-index-simple</name>
-            <version>1.0.17</version>
+            <version>1.0.18</version>
         </dependency>
 ```
 
