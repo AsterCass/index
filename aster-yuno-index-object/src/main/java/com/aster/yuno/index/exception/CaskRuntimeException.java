@@ -12,6 +12,9 @@ public class CaskRuntimeException extends RuntimeException {
         super(message);
     }
 
+    public CaskRuntimeException() {
+        super();
+    }
 
 
 }
