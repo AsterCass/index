@@ -3,10 +3,10 @@ package com.aster.yuno.index.utils;
 import cn.hutool.core.lang.Snowflake;
 import cn.hutool.core.util.IdUtil;
 import com.aster.yuno.index.config.SnowflakeConfig;
+import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
@@ -24,7 +24,7 @@ public class SnowflakeUtils {
     private static final Integer MAX_LEN = 20;
 
 
-    @Bean
+    @PostConstruct
     public void initSnowflake() {
         if (null == SNOWFLAKE_GEN) {
             SnowflakeConfig snowflakeConfig =

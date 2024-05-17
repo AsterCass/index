@@ -5,10 +5,10 @@ import com.aster.yuno.index.bo.ProxyGeneralRequestParam;
 import com.aster.yuno.index.bo.ResultObj;
 import com.aster.yuno.index.config.ProxyRequestConfig;
 import com.aster.yuno.index.exception.CaskRuntimeException;
+import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
@@ -34,7 +34,7 @@ public class ProxyRequestUtils {
 
     private static String proxyUrl;
 
-    @Bean
+    @PostConstruct
     public void initProxyRequest() {
         ProxyRequestConfig proxyRequestConfig =
                 applicationContext.getBean(ProxyRequestConfig.class);
