@@ -32,6 +32,11 @@ public enum WebResultStatusEnum {
      */
     NOT_LOGIN(600, "未登录", "not_login"),
 
+    /**
+     * 未实名认证
+     */
+    NOT_ID_CARD_AUTH(610, "未实名认证", "not_id_card_auth"),
+
     ;
 
 
