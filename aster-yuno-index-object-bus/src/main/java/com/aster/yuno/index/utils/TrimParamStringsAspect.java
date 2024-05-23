@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.Collection;
 
 @Aspect
 @Component
@@ -30,6 +31,14 @@ public class TrimParamStringsAspect {
                     Object needTrimParam = args[annCount];
                     if (needTrimParam instanceof String thisStr) {
                         args[annCount] = thisStr.trim();
+                    } else if (needTrimParam instanceof Collection<?> thisObjList) {
+                        args[annCount] = thisObjList.stream().map(obj -> {
+                            if (obj instanceof String thisStr) {
+                                return thisStr.trim();
+                            } else {
+                                return obj;
+                            }
+                        }).toList();
                     } else {
                         trimFields(args[annCount]);
                     }
