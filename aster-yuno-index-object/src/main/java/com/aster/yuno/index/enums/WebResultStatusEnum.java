@@ -28,6 +28,11 @@ public enum WebResultStatusEnum {
     LOGIC_FORBID(500, "内部流转终止", "logic_forbid"),
 
     /**
+     * 特殊内部流转终止
+     */
+    SPECIAL_LOGIC_FORBID(550, "特殊内部流转终止", "special_logic_forbid"),
+
+    /**
      * 未登录
      */
     NOT_LOGIN(600, "未登录", "not_login"),

@@ -29,6 +29,8 @@ public class GlobalException {
                 yield ResultObj.error(WebResultStatusEnum.LOGIC_FORBID.getCode(),
                         String.format("[%s] %s", field, firstValidError.getDefaultMessage()));
             }
+            case ("com.aster.yuno.index.exception.CaskSpecialRuntimeException") ->
+                    ResultObj.error(WebResultStatusEnum.SPECIAL_LOGIC_FORBID.getCode(), e.getMessage());
             case ("com.aster.yuno.index.exception.CaskNotIdCardAuthException") ->
                     ResultObj.error(WebResultStatusEnum.NOT_ID_CARD_AUTH.getCode(), e.getMessage());
             case ("com.aster.yuno.index.exception.CaskNotLoginException") ->

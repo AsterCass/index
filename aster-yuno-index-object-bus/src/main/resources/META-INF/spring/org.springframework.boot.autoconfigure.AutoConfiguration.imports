@@ -2,4 +2,5 @@ com.aster.yuno.index.config.YunoAutoConfig
 com.aster.yuno.index.utils.SnowflakeUtils
 com.aster.yuno.index.utils.ProxyRequestUtils
 com.aster.yuno.index.utils.IpSearchUtils
+com.aster.yuno.index.utils.TrimParamStringsAspect
 com.aster.yuno.index.excpetion.GlobalException
