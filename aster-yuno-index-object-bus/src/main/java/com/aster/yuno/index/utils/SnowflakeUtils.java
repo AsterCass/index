@@ -56,7 +56,7 @@ public class SnowflakeUtils {
 
     public static List<String> getIdStrList(String prefix, Integer sum) {
         List<String> ret = new java.util.ArrayList<>(Collections.emptyList());
-        if (sum > 1) {
+        if (sum > 0) {
             Integer digits = String.valueOf(sum).length();
             String idPrefix = prefix + SNOWFLAKE_GEN.nextIdStr().substring(0, MAX_LEN - prefix.length() - digits);
             for (int count = 0; count < sum; ++count) {
