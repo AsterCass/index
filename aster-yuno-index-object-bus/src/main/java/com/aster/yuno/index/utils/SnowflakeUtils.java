@@ -10,6 +10,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
+import java.util.Collections;
+import java.util.List;
+
 
 @Slf4j
 @Import({SnowflakeConfig.class})
@@ -49,6 +52,18 @@ public class SnowflakeUtils {
 
     public static String getIdStr(String prefix) {
         return prefix + SNOWFLAKE_GEN.nextIdStr().substring(0, MAX_LEN - prefix.length());
+    }
+
+    public static List<String> getIdStrList(String prefix, Integer sum) {
+        List<String> ret = new java.util.ArrayList<>(Collections.emptyList());
+        if (sum > 1) {
+            Integer digits = String.valueOf(sum).length();
+            String idPrefix = prefix + SNOWFLAKE_GEN.nextIdStr().substring(0, MAX_LEN - prefix.length() - digits);
+            for (int count = 0; count < sum; ++count) {
+                ret.add(idPrefix + String.format("%0" + digits + "d", count));
+            }
+        }
+        return ret;
     }
 
 }
