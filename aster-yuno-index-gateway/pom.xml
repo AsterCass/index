@@ -6,13 +6,13 @@
     <parent>
         <groupId>com.astercasc</groupId>
         <artifactId>index</artifactId>
-        <version>1.1.6</version>
+        <version>1.1.7</version>
     </parent>
 
 
     <artifactId>aster-yuno-index-gateway</artifactId>
     <name>aster-yuno-index-gateway</name>
-    <version>1.1.6</version>
+    <version>1.1.7</version>
 
 
     <dependencies>
