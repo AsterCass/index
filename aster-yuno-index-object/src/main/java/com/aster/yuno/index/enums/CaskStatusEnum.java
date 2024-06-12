@@ -20,6 +20,11 @@ public enum CaskStatusEnum {
      */
     DEL(-1, "deleted"),
 
+    /**
+     * disable
+     */
+    DISABLE(1, "disable"),
+
     ;
 
 
