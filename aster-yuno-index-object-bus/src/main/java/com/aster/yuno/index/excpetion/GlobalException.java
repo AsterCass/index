@@ -3,6 +3,7 @@ package com.aster.yuno.index.excpetion;
 
 import com.aster.yuno.index.bo.ResultObj;
 import com.aster.yuno.index.enums.WebResultStatusEnum;
+import com.aster.yuno.index.exception.CaskRuntimeException;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.validation.BindException;
@@ -17,8 +18,12 @@ public class GlobalException {
     @ExceptionHandler({Exception.class})
     public ResultObj<String> exception(Exception e) {
         e.printStackTrace();
+        String className = e.getClass().getName();
+        if (e instanceof CaskRuntimeException) {
+            className = "com.aster.yuno.index.exception.CaskRuntimeException";
+        }
         //use class name instead <--enable-preview> to use "type pattern matching"
-        return switch (e.getClass().getName()) {
+        return switch (className) {
             case ("org.springframework.web.bind.MethodArgumentNotValidException") -> {
                 var firstValidError = ((BindException) e).getBindingResult().getAllErrors().get(0);
                 var field = "argument";
