@@ -10,6 +10,8 @@ import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
 
 @RestControllerAdvice
@@ -18,10 +20,8 @@ public class GlobalException {
     @ExceptionHandler({Exception.class})
     public ResultObj<String> exception(Exception e) {
         e.printStackTrace();
-        String className = e.getClass().getName();
-        if (e instanceof CaskRuntimeException) {
-            className = "com.aster.yuno.index.exception.CaskRuntimeException";
-        }
+
+        String className = getClassName(e);
         //use class name instead <--enable-preview> to use "type pattern matching"
         return switch (className) {
             case ("org.springframework.web.bind.MethodArgumentNotValidException") -> {
@@ -45,5 +45,23 @@ public class GlobalException {
             default -> ResultObj.error(WebResultStatusEnum.SYSTEM_UNKNOWN_ERROR.getCode(), e.getMessage());
         };
     }
+
+    private static String getClassName(Exception e) {
+
+        String className = e.getClass().getName();
+
+        List<String> specialRuntimeExceptionClass = Arrays.asList(
+                "com.aster.yuno.index.exception.CaskSpecialRuntimeException",
+                "com.aster.yuno.index.exception.CaskNotIdCardAuthException",
+                "com.aster.yuno.index.exception.CaskNotLoginException"
+        );
+
+        if (!specialRuntimeExceptionClass.contains(className) && e instanceof CaskRuntimeException) {
+            className = "com.aster.yuno.index.exception.CaskRuntimeException";
+        }
+        return className;
+    }
+
+
 
 }
