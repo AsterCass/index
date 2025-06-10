@@ -6,7 +6,7 @@
 
     <groupId>com.astercasc</groupId>
     <artifactId>index</artifactId>
-    <version>1.1.12</version>
+    <version>2.1.0</version>
     <packaging>pom</packaging>
     <name>aster-yuno-index</name>
     <description>base index</description>
@@ -41,7 +41,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <aster.yuno.index.version>1.1.12</aster.yuno.index.version>
+        <aster.yuno.index.version>2.1.0</aster.yuno.index.version>
         <spring-boot.version>3.2.5</spring-boot.version>
         <spring-cloud.version>4.1.1</spring-cloud.version>
     </properties>
@@ -114,23 +114,24 @@
             </dependency>
 
 
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-actuator</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+
+
             <!--            spring cloud-->
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
                 <version>${spring-cloud.version}</version>
             </dependency>
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-gateway</artifactId>
-                <version>${spring-cloud.version}</version>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-consul-config</artifactId>
                 <version>${spring-cloud.version}</version>
             </dependency>
 

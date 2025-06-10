@@ -4,7 +4,7 @@
         <dependency>
             <artifactId>aster-yuno-index-simple</artifactId>
             <name>aster-yuno-index-simple</name>
-            <version>1.1.12</version>
+            <version>2.1.0</version>
         </dependency>
 ```
 
@@ -21,8 +21,8 @@ index:
 
 aster-yuno-index-core:
 * spring-boot-starter
-* spring-cloud-starter-consul-config
-* spring-cloud-starter-consul-discovery
+* spring-cloud-starter-netflix-eureka-client
+* spring-boot-starter-actuator
 * lombok
 
 aster-yuno-index-object:
